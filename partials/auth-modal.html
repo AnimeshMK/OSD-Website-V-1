@@ -1,0 +1,37 @@
+<div class="auth-overlay" id="authOverlay">
+  <div class="auth-modal">
+
+    <button class="auth-close" id="authClose" aria-label="Close">×</button>
+
+    <div class="auth-tabs">
+      <button class="auth-tab active" data-tab="login">SIGN IN</button>
+      <button class="auth-tab" data-tab="register">SIGN UP</button>
+    </div>
+
+    <!-- LOGIN -->
+    <form class="auth-form active" id="loginForm">
+      <label>Email</label>
+      <input type="email" placeholder="you@example.com" required />
+
+      <label>Password</label>
+      <input type="password" required />
+
+      <button type="submit" class="auth-submit">Sign In</button>
+    </form>
+
+    <!-- REGISTER -->
+    <form class="auth-form" id="registerForm">
+      <label>Username</label>
+      <input type="text" required />
+
+      <label>Email</label>
+      <input type="email" required />
+
+      <label>Password</label>
+      <input type="password" required />
+
+      <button type="submit" class="auth-submit">Create Account</button>
+    </form>
+
+  </div>
+</div>

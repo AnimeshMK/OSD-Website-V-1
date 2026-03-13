@@ -1,0 +1,179 @@
+/* ================= AUTH PANEL (SIDEBAR FOOTER) ================= */
+
+.sidebar-auth {
+  position: absolute;
+  bottom: 18px;
+  left: 0;
+  width: 100%;
+  padding: 0 14px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(10px);
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease;
+}
+
+/* Show only when sidebar is expanded */
+.sidebar:not(.collapsed) .sidebar-auth {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+/* Buttons */
+.auth-btn {
+  display: block;
+  text-align: center;
+  padding: 10px 0;
+
+  font-family: "JetBrains Mono", monospace;
+  font-size: 12px;
+  letter-spacing: 1px;
+
+  color: #ff2b2b;
+  border: 1px solid rgba(255, 43, 43, 0.6);
+  background: rgba(255, 43, 43, 0.05);
+
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.auth-btn:hover {
+  background: rgba(255, 43, 43, 0.15);
+  box-shadow: 0 0 10px rgba(255, 43, 43, 0.35);
+}
+
+/* Outline variant */
+.auth-btn.outline {
+  background: transparent;
+  color: #fff;
+  border-color: rgba(255,255,255,0.25);
+}
+
+.auth-btn.outline:hover {
+  border-color: #ff2b2b;
+  color: #ff2b2b;
+}
+
+/* ================= AUTH OVERLAY ================= */
+
+.auth-overlay {
+  position: fixed;
+  top: 56px; /* below system header */
+  left: 0;
+  width: 100%;
+  height: calc(100vh - 56px);
+  background: rgba(5, 5, 5, 0.75);
+  backdrop-filter: blur(6px);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 200;
+}
+
+/* visible */
+.auth-overlay.active {
+  display: flex;
+}
+
+/* ================= MODAL ================= */
+
+.auth-modal {
+  width: 420px;
+  max-width: 90%;
+  background: rgba(10, 10, 10, 0.95);
+  border: 1px solid rgba(255, 43, 43, 0.3);
+  box-shadow: 0 0 40px rgba(255, 43, 43, 0.25);
+  padding: 28px 26px 32px;
+  position: relative;
+  font-family: "JetBrains Mono", monospace;
+}
+
+/* Close button */
+.auth-close {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  background: none;
+  border: none;
+  color: #ff3b3b;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+/* ================= TABS ================= */
+
+.auth-tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 22px;
+}
+
+.auth-tab {
+  flex: 1;
+  padding: 10px 0;
+  background: transparent;
+  border: 1px solid rgba(255, 43, 43, 0.3);
+  color: #aaa;
+  cursor: pointer;
+  font-size: 13px;
+  letter-spacing: 1px;
+  transition: 0.25s ease;
+}
+
+.auth-tab.active {
+  background: rgba(255, 43, 43, 0.15);
+  color: #ff3b3b;
+  border-color: #ff3b3b;
+}
+
+/* ================= FORMS ================= */
+
+.auth-form {
+  display: none;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.auth-form.active {
+  display: flex;
+}
+
+.auth-form label {
+  font-size: 11px;
+  opacity: 0.8;
+}
+
+.auth-form input {
+  background: #0d0d0d;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 10px;
+  color: #fff;
+  font-family: inherit;
+  outline: none;
+}
+
+.auth-form input:focus {
+  border-color: #ff3b3b;
+}
+
+.auth-submit {
+  margin-top: 10px;
+  padding: 12px;
+  background: #ff2b2b;
+  border: none;
+  color: #000;
+  font-weight: 600;
+  cursor: pointer;
+  letter-spacing: 1px;
+}
+
+.auth-submit:hover {
+  background: #ff4b4b;
+}

@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OffSecDiary — Offensive Security Research</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Rajdhani:wght@300;400;500;600&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/home.css">
+</head>
+<body>
+
+  <canvas id="bg-canvas"></canvas>
+  <div class="grain"></div>
+  <div class="vignette"></div>
+
+  <!-- ===== NAV ===== -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="home.html" class="nav-logo">
+        <span class="nl-b">[</span>OffSecDiary<span class="nl-b">]</span>
+      </a>
+      <button class="nav-burger" id="burger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="home.html" class="active">Home</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="enquiry.html">Enquiry</a></li>
+        <li><a href="about.html">About</a></li>
+        <!--<li><a href="achievements.html">Achievements</a></li>-->
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <header class="hero">
+    <div class="hero-inner">
+
+      <div class="hero-logo-block" data-reveal>
+        <div class="logo-mark">
+          <img src="../assets/bootlogo_noname.PNG" alt="OffSecDiary Logo" style="width: 80px; height: 80px; object-fit: contain;">
+        </div>
+        <div class="logo-text-block">
+          <h1 class="logo-wordmark">OFFSEC<span class="lw-red">DIARY</span></h1>
+          <p class="logo-tagline">Hack | Defend | Innovate</p>
+        </div>
+      </div>
+
+      <div class="hero-rule" data-reveal data-delay="1">
+        <span class="hr-line"></span>
+        <span class="hr-mono">// CYBERSECURITY R&amp;D INITIATIVE</span>
+        <span class="hr-line"></span>
+      </div>
+
+      <p class="hero-desc" data-reveal data-delay="2">
+        A cybersecurity research and development initiative focused on offensive security —
+        examining system vulnerabilities, engineering practical security technologies,
+        and advancing stronger digital protection.
+      </p>
+
+      <div class="hero-actions" data-reveal data-delay="3">
+        <a href="about.html" class="btn-primary">Explore Our Work</a>
+        <a href="enquiry.html" class="btn-ghost">Get in Touch</a>
+      </div>
+
+    </div>
+
+    <div class="hero-scroll">
+      <span class="hs-line"></span>
+      <span class="hs-text">SCROLL</span>
+    </div>
+  </header>
+
+  <!-- ===== ABOUT ===== -->
+  <section class="sec" id="about">
+    <div class="sec-inner">
+
+      <div class="sec-label" data-reveal>
+        <span class="slab-n">01</span>
+        <span class="slab-slash">//</span>
+        <span class="slab-t">ABOUT OFFSECDIARY</span>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-left" data-reveal data-delay="1">
+          <h2 class="sec-heading">Research.<br>Engineer.<br><span class="t-red">Protect.</span></h2>
+        </div>
+        <div class="about-right" data-reveal data-delay="2">
+          <p>OffSecDiary is a cybersecurity research and development initiative focused on offensive security. Research examines system vulnerabilities across hardware and software environments.</p>
+          <p>Insights drive the development of practical security technologies for stronger digital protection across real-world threat surfaces.</p>
+          <div class="about-pillars">
+            <div class="ap-item"><span class="ap-dot"></span>Offensive Security Thinking</div>
+            <div class="ap-item"><span class="ap-dot"></span>Technical Curiosity</div>
+            <div class="ap-item"><span class="ap-dot"></span>Deep System Analysis</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== WHO WE ARE ===== -->
+  <section class="sec sec-alt" id="who">
+    <div class="sec-inner">
+
+      <div class="sec-label" data-reveal>
+        <span class="slab-n">02</span>
+        <span class="slab-slash">//</span>
+        <span class="slab-t">WHO WE ARE</span>
+      </div>
+
+      <div class="who-grid">
+        <div class="who-card" data-reveal data-delay="1">
+          <div class="wc-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+            </svg>
+          </div>
+          <h3>Offensive Thinking</h3>
+          <p>Built around offensive security thinking and deep system analysis. Understanding how systems break, and how attacks evolve.</p>
+        </div>
+        <div class="who-card" data-reveal data-delay="2">
+          <div class="wc-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <circle cx="12" cy="12" r="3"/>
+              <path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/>
+            </svg>
+          </div>
+          <h3>Research &amp; Experimentation</h3>
+          <p>An environment driven by research, experimentation, and real-world security problem solving — no theoretical shortcuts.</p>
+        </div>
+        <div class="who-card" data-reveal data-delay="3">
+          <div class="wc-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            </svg>
+          </div>
+          <h3>Security Engineering</h3>
+          <p>Focused on how security technologies can be engineered stronger — from hardware concepts to software systems and validation.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== WHAT WE DO ===== -->
+  <section class="sec" id="what">
+    <div class="sec-inner">
+
+      <div class="sec-label" data-reveal>
+        <span class="slab-n">03</span>
+        <span class="slab-slash">//</span>
+        <span class="slab-t">WHAT WE DO</span>
+      </div>
+
+      <h2 class="sec-heading sec-heading-center" data-reveal data-delay="1">Areas of <span class="t-red">Work</span></h2>
+
+      <div class="work-list">
+
+        <div class="work-item" data-reveal>
+          <span class="wi-num">01</span>
+          <div class="wi-body">
+            <h3 class="wi-title">Hardware Security Research</h3>
+            <p class="wi-desc">Secure charging cable concepts, monitored power devices, and personal safety hardware innovations.</p>
+          </div>
+          <span class="wi-tag">Hardware</span>
+        </div>
+
+        <div class="work-item" data-reveal>
+          <span class="wi-num">02</span>
+          <div class="wi-body">
+            <h3 class="wi-title">Software Security Development</h3>
+            <p class="wi-desc">Password protection systems, SOS safety applications, and Data Loss Prevention (DLP) technologies.</p>
+          </div>
+          <span class="wi-tag">Software</span>
+        </div>
+
+        <div class="work-item" data-reveal>
+          <span class="wi-num">03</span>
+          <div class="wi-body">
+            <h3 class="wi-title">Cybersecurity Research Tools</h3>
+            <p class="wi-desc">Study and development of IDPS concepts, anti-tamper mechanisms, encryption resilience, and data analysis tools.</p>
+          </div>
+          <span class="wi-tag">Research</span>
+        </div>
+
+        <div class="work-item" data-reveal>
+          <span class="wi-num">04</span>
+          <div class="wi-body">
+            <h3 class="wi-title">Security Testing &amp; Validation</h3>
+            <p class="wi-desc">Penetration testing, vulnerability assessment, and real-world security evaluation methodologies.</p>
+          </div>
+          <span class="wi-tag">Testing</span>
+        </div>
+
+        <div class="work-item" data-reveal>
+          <span class="wi-num">05</span>
+          <div class="wi-body">
+            <h3 class="wi-title">Security Programs &amp; Initiatives</h3>
+            <p class="wi-desc">Shadow Corps, Operation Zero Trust, and cybersecurity workshops for the community.</p>
+          </div>
+          <span class="wi-tag">Programs</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="ft-brand">
+          <span class="ft-logo"><span class="nl-b">[</span>OFFSEC<span class="t-red">DIARY</span><span class="nl-b">]</span></span>
+          <span class="ft-tagline">Offensive Security Research &amp; Development</span>
+        </div>
+        <nav class="ft-nav">
+          <a href="home.html">Home</a>
+          <a href="events.html">Events</a>
+          <a href="about.html">About</a>
+          <a href="enquiry.html">Enquiry</a>
+          <a href="achievements.html">Achievements</a>
+        </nav>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2025 OffSecDiary. All rights reserved.</span>
+        <span class="ft-warn">[ Unauthorized access is prohibited ]</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/home.js"></script>
+</body>
+</html>

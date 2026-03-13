@@ -1,0 +1,417 @@
+/* =====================================================
+   OFFSECDIARY — boot.css
+   Same fonts, same palette as the rest of the site
+===================================================== */
+
+:root {
+  --red:        #cc2222;
+  --red-bright: #e83333;
+  --red-dim:    #7a1010;
+  --maroon:     #5c0f0f;
+  --black:      #000000;
+  --bg-1:       #080808;
+  --bg-2:       #0e0e0e;
+  --grey-3:     #555555;
+  --grey-4:     #777777;
+  --grey-5:     #aaaaaa;
+  --text:       #ddd8d8;
+  --border:     rgba(140,20,20,0.25);
+  --border-mid: rgba(180,30,30,0.4);
+  --glow:       rgba(204,34,34,0.5);
+  --glow-sm:    rgba(204,34,34,0.25);
+  --font-display: 'Orbitron', sans-serif;
+  --font-mono:    'Share Tech Mono', monospace;
+}
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+html, body {
+  width: 100%; height: 100%;
+  overflow: hidden;
+  background: var(--black);
+  color: var(--text);
+  font-family: var(--font-mono);
+}
+
+/* ---- Ambient layers ---- */
+#boot-matrix {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  opacity: 0.07;
+  pointer-events: none;
+}
+
+.boot-grain {
+  position: fixed;
+  inset: -50%;
+  width: 200%; height: 200%;
+  z-index: 1;
+  opacity: 0.025;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 256px;
+  animation: grain 8s steps(10) infinite;
+}
+
+@keyframes grain {
+  0%   { transform: translate(0,0); }
+  10%  { transform: translate(-5%,-5%); }
+  30%  { transform: translate(5%,-10%); }
+  50%  { transform: translate(-10%,5%); }
+  70%  { transform: translate(15%,0); }
+  90%  { transform: translate(10%,5%); }
+  100% { transform: translate(5%,0); }
+}
+
+.boot-vignette {
+  position: fixed;
+  inset: 0;
+  z-index: 2;
+  background: radial-gradient(ellipse at center, transparent 45%, rgba(0,0,0,0.85) 100%);
+  pointer-events: none;
+}
+
+/* =====================================================
+   BOOT SCREEN
+===================================================== */
+
+#boot-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 1.2s ease;
+}
+
+#boot-screen.visible { opacity: 1; }
+#boot-screen.fade-out { opacity: 0; }
+
+/* Corner brackets */
+.corner {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-color: var(--red-dim);
+  border-style: solid;
+  opacity: 0.6;
+}
+
+.corner.tl { top: 24px;    left: 24px;    border-width: 1.5px 0 0 1.5px; }
+.corner.tr { top: 24px;    right: 24px;   border-width: 1.5px 1.5px 0 0; }
+.corner.bl { bottom: 24px; left: 24px;    border-width: 0 0 1.5px 1.5px; }
+.corner.br { bottom: 24px; right: 24px;   border-width: 0 1.5px 1.5px 0; }
+
+/* ---- Top bar ---- */
+.boot-topbar {
+  position: absolute;
+  top: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  white-space: nowrap;
+}
+
+.tb-logo {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 900;
+  letter-spacing: 3px;
+  color: var(--text);
+}
+
+.tb-b   { color: var(--red); font-size: 1.1rem; }
+.tb-red { color: var(--red); }
+
+.tb-status {
+  font-size: 0.68rem;
+  letter-spacing: 3px;
+  color: var(--red-dim);
+}
+
+.tb-telemetry {
+  display: flex;
+  gap: 1.25rem;
+  font-size: 0.68rem;
+  color: var(--grey-4);
+  letter-spacing: 1px;
+}
+
+.tel-val { color: var(--grey-5); }
+
+/* ---- Core ---- */
+.boot-core {
+  position: relative;
+  width: min(260px, 50vw);
+  height: min(260px, 50vw);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Rotating rings */
+.core-rings {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+}
+
+.ring-1 {
+  width: min(260px, 50vw); height: min(260px, 50vw);
+  border-color: rgba(140,20,20,0.3);
+  animation: spin 30s linear infinite;
+}
+
+.ring-2 {
+  width: min(220px, 42vw); height: min(220px, 42vw);
+  border-color: rgba(140,20,20,0.2);
+  animation: spin 20s linear infinite reverse;
+}
+
+.ring-3 {
+  width: min(180px, 35vw); height: min(180px, 35vw);
+  border-color: rgba(140,20,20,0.15);
+  animation: spin 12s linear infinite;
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* SVG progress ring */
+.progress-svg {
+  position: absolute;
+  width: min(260px, 50vw);
+  height: min(260px, 50vw);
+  transform: rotate(-90deg);
+}
+
+.prog-track {
+  fill: none;
+  stroke: rgba(140,20,20,0.12);
+  stroke-width: 2;
+}
+
+.prog-fill {
+  fill: none;
+  stroke: var(--red);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-dasharray: 628.3;
+  stroke-dashoffset: 628.3;
+  transition: stroke-dashoffset 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  filter: drop-shadow(0 0 6px var(--glow));
+}
+
+/* Inner core content */
+.core-inner {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  text-align: center;
+}
+
+.ci-logo {
+  width: 52px;
+  height: 52px;
+  filter: drop-shadow(0 0 10px rgba(204,34,34,0.4));
+  animation: logo-breathe 3s ease-in-out infinite;
+}
+
+@keyframes logo-breathe {
+  0%,100% { filter: drop-shadow(0 0 8px rgba(204,34,34,0.3)); }
+  50%      { filter: drop-shadow(0 0 18px rgba(204,34,34,0.6)); }
+}
+
+.ci-percent {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 900;
+  color: var(--red);
+  letter-spacing: 2px;
+  text-shadow: 0 0 16px var(--glow-sm);
+  line-height: 1;
+}
+
+.ci-phase {
+  font-size: 0.65rem;
+  letter-spacing: 3px;
+  color: var(--grey-4);
+}
+
+/* ---- Diagnostics ---- */
+.boot-diag {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.boot-diag.left  { left: clamp(20px, 6vw, 80px); }
+.boot-diag.right { right: clamp(20px, 6vw, 80px); text-align: right; }
+
+.diag-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.boot-diag.right .diag-item { align-items: flex-end; }
+
+.di-label {
+  font-size: 0.62rem;
+  letter-spacing: 2px;
+  color: var(--grey-3);
+}
+
+.di-val {
+  font-size: 0.72rem;
+  letter-spacing: 1.5px;
+}
+
+.di-val.ok { color: var(--red); }
+
+/* ---- Bottom status ---- */
+.boot-bottom {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  width: clamp(260px, 50vw, 500px);
+}
+
+.status-line {
+  font-size: 0.72rem;
+  letter-spacing: 1.5px;
+  color: var(--red-dim);
+  min-height: 1.2em;
+  text-align: center;
+}
+
+.status-bar {
+  width: 100%;
+  height: 1px;
+  background: rgba(140,20,20,0.2);
+  border-radius: 1px;
+  overflow: hidden;
+}
+
+.status-bar-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, var(--maroon), var(--red));
+  box-shadow: 0 0 8px var(--glow-sm);
+  transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* =====================================================
+   WELCOME SCREEN
+===================================================== */
+
+#welcome-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  background: var(--black);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.8s ease;
+}
+
+#welcome-screen.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.welcome-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+#welcome-screen.active .welcome-inner {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.welcome-logo-mark {
+  width: 80px;
+  height: 80px;
+  filter: drop-shadow(0 0 16px rgba(204,34,34,0.45));
+  animation: logo-breathe 3s ease-in-out infinite;
+}
+
+.welcome-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.2rem, 3.5vw, 2rem);
+  font-weight: 900;
+  letter-spacing: 4px;
+  color: var(--text);
+}
+
+.wt-red { color: var(--red); text-shadow: 0 0 18px var(--glow-sm); }
+
+.welcome-sub {
+  font-size: 0.72rem;
+  letter-spacing: 3px;
+  color: var(--grey-4);
+}
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 768px) {
+  .boot-core    { width: 200px; height: 200px; }
+  .progress-svg { width: 200px; height: 200px; }
+  .ring-1       { width: 200px; height: 200px; }
+  .ring-2       { width: 168px; height: 168px; }
+  .ring-3       { width: 136px; height: 136px; }
+
+  /* Recalculate circumference for r=95: 2π×95 ≈ 596.9 */
+  .prog-fill    { stroke-dasharray: 596.9; stroke-dashoffset: 596.9; }
+
+  .tb-status    { display: none; }
+  .boot-diag    { display: none; }
+}
+
+@media (max-width: 480px) {
+  .boot-core    { width: 160px; height: 160px; }
+  .progress-svg { width: 160px; height: 160px; }
+  .ring-1       { width: 160px; height: 160px; }
+  .ring-2       { width: 130px; height: 130px; }
+  .ring-3       { width: 100px; height: 100px; }
+
+  .tb-telemetry { display: none; }
+  .boot-bottom  { width: 90vw; }
+
+  .ci-percent   { font-size: 1.1rem; }
+}

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Achievements — OffSecDiary</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Rajdhani:wght@300;400;500;600&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/home.css">
+  <link rel="stylesheet" href="../css/achievements.css">
+</head>
+<body>
+
+  <canvas id="bg-canvas"></canvas>
+  <div class="grain"></div>
+  <div class="vignette"></div>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="home.html" class="nav-logo">
+        <span class="nl-b">[</span>OffSecDiary<span class="nl-b">]</span>
+      </a>
+      <button class="nav-burger" id="burger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="home.html">Home</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="enquiry.html">Enquiry</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="achievements.html" class="active">Achievements</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- PAGE -->
+  <main class="page-main">
+    <div class="page-inner">
+
+      <!-- Page header -->
+      <div class="page-header" data-reveal>
+        <div class="sec-label">
+          <span class="slab-n">OSD</span>
+          <span class="slab-slash">//</span>
+          <span class="slab-t">ACHIEVEMENTS</span>
+        </div>
+        <h1 class="page-title">Our <span class="t-red">Achievements</span></h1>
+        <p class="page-sub">Certifications, recognitions, milestones, and validated accomplishments earned through continuous learning and offensive security practice.</p>
+      </div>
+
+      <!-- Achievement grid -->
+      <div class="ach-grid">
+
+        <div class="ach-card" data-reveal>
+          <div class="ach-card-top">
+            <span class="ach-icon">📢</span>
+            <span class="ach-tag">EVENTS</span>
+          </div>
+          <h3 class="ach-title">3+ Workshops &amp; Events Conducted</h3>
+          <p class="ach-desc">Hands-on cybersecurity workshops and technical events delivered across multiple domains and skill levels.</p>
+        </div>
+
+        <div class="ach-card" data-reveal data-delay="1">
+          <div class="ach-card-top">
+            <span class="ach-icon">👥</span>
+            <span class="ach-tag">TRAINING</span>
+          </div>
+          <h3 class="ach-title">15+ Learners &amp; Participants Trained</h3>
+          <p class="ach-desc">Individuals trained through structured workshops, learning programs, and practical cybersecurity sessions.</p>
+        </div>
+
+        <div class="ach-card" data-reveal data-delay="2">
+          <div class="ach-card-top">
+            <span class="ach-icon">📘</span>
+            <span class="ach-tag">PROGRAMS</span>
+          </div>
+          <h3 class="ach-title">1+ Training Programs Delivered</h3>
+          <p class="ach-desc">Structured offensive security training programs designed with real-world methodologies and hands-on learning.</p>
+        </div>
+
+        <div class="ach-card" data-reveal>
+          <div class="ach-card-top">
+            <span class="ach-icon">🌐</span>
+            <span class="ach-tag">COMMUNITY</span>
+          </div>
+          <h3 class="ach-title">300+ Community Growth</h3>
+          <p class="ach-desc">Active learners and members engaged across platforms through discussions, events, and shared learning initiatives.</p>
+        </div>
+
+        <div class="ach-card" data-reveal data-delay="1">
+          <div class="ach-card-top">
+            <span class="ach-icon">🧪</span>
+            <span class="ach-tag">RESEARCH</span>
+          </div>
+          <h3 class="ach-title">3+ Research &amp; Technical Contributions</h3>
+          <p class="ach-desc">Offensive security research initiatives, tooling, and CTF-style technical content developed for learning purposes.</p>
+        </div>
+
+        <div class="ach-card" data-reveal data-delay="2">
+          <div class="ach-card-top">
+            <span class="ach-icon">🎓</span>
+            <span class="ach-tag">MENTORSHIP</span>
+          </div>
+          <h3 class="ach-title">30+ Internship &amp; Mentorship Impacts</h3>
+          <p class="ach-desc">Interns and mentees supported through guided learning paths, mentorship, and practical exposure.</p>
+        </div>
+
+        <div class="ach-card" data-reveal>
+          <div class="ach-card-top">
+            <span class="ach-icon">📜</span>
+            <span class="ach-tag">CERTIFICATIONS</span>
+          </div>
+          <h3 class="ach-title">200+ Certifications &amp; Recognitions</h3>
+          <p class="ach-desc">Certificates issued for successful participation in trainings, workshops, and learning programs.</p>
+        </div>
+
+        <div class="ach-card" data-reveal data-delay="1">
+          <div class="ach-card-top">
+            <span class="ach-icon">🚀</span>
+            <span class="ach-tag">IMPACT</span>
+          </div>
+          <h3 class="ach-title">500+ Total Individuals Impacted</h3>
+          <p class="ach-desc">Overall reach across workshops, training programs, community initiatives, and educational activities.</p>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="ft-brand">
+          <span class="ft-logo"><span class="nl-b">[</span>OFFSEC<span class="t-red">DIARY</span><span class="nl-b">]</span></span>
+          <span class="ft-tagline">Offensive Security Research &amp; Development</span>
+        </div>
+        <nav class="ft-nav">
+          <a href="home.html">Home</a>
+          <a href="events.html">Events</a>
+          <a href="about.html">About</a>
+          <a href="enquiry.html">Enquiry</a>
+          <a href="achievements.html">Achievements</a>
+        </nav>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2025 OffSecDiary. All rights reserved.</span>
+        <span class="ft-warn">[ Unauthorized access is prohibited ]</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/home.js"></script>
+</body>
+</html>

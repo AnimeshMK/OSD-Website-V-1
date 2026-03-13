@@ -1,0 +1,498 @@
+/* =====================================================
+   OFFSECDIARY — enquiry.css
+   Extends home.css — same variables, same theme
+===================================================== */
+
+/* ---- Page layout (reused from events) ---- */
+.page-main {
+  min-height: 100vh;
+  padding: 100px 0 6rem;
+  position: relative;
+  z-index: 10;
+}
+
+.page-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 4rem 2.5rem;
+}
+
+.enq-inner {
+  max-width: 1100px;
+}
+
+/* ---- Page header ---- */
+.page-header {
+  margin-bottom: 3.5rem;
+}
+
+.page-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-weight: 900;
+  letter-spacing: 2px;
+  color: var(--text);
+  margin: 1.25rem 0 0.75rem;
+  line-height: 1.05;
+}
+
+.page-sub {
+  font-size: 1rem;
+  color: var(--grey-4);
+  max-width: 520px;
+  line-height: 1.7;
+}
+
+/* =====================================================
+   ENQUIRY GRID (form + contact side by side)
+===================================================== */
+
+.enq-grid {
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: 1.5px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  overflow: hidden;
+  margin-bottom: 1.5px;
+}
+
+/* =====================================================
+   CARDS
+===================================================== */
+
+.enq-card {
+  background: var(--bg-1);
+  padding: 2.5rem;
+  position: relative;
+}
+
+.enq-card-side {
+  border-left: none;
+  background: var(--bg-2);
+}
+
+.enq-card-full {
+  background: var(--bg-1);
+  border: 1px solid var(--border);
+  border-top: none;
+  border-radius: 0 0 6px 6px;
+  margin-top: 0;
+}
+
+/* Card label — reuses .sec-label style from home */
+.enq-card-label {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.enq-card-desc {
+  font-size: 0.9rem;
+  color: var(--grey-4);
+  line-height: 1.7;
+  margin-bottom: 2rem;
+}
+
+/* =====================================================
+   FORM
+===================================================== */
+
+.enq-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.form-group label {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 2.5px;
+  color: var(--grey-3);
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  background: var(--bg-0);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  padding: 0.75rem 1rem;
+  color: var(--text);
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  outline: none;
+  transition: border-color var(--dur) var(--ease),
+              box-shadow var(--dur) var(--ease);
+  resize: vertical;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: var(--grey-2);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: var(--red-dim);
+  box-shadow: 0 0 0 3px rgba(204,34,34,0.08);
+}
+
+/* Submit button — reuses home .btn-primary exactly */
+.enq-submit {
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  padding: 0;
+  border-radius: 3px;
+  display: inline-flex;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all var(--dur) var(--ease);
+  border: none;
+  margin-top: 0.5rem;
+  align-self: flex-start;
+}
+
+.enq-submit .btn-inner {
+  padding: 0.85rem 2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  position: relative;
+  z-index: 2;
+  transition: var(--dur) var(--ease);
+}
+
+.enq-submit {
+  background: var(--maroon);
+  color: var(--text);
+  border: 1px solid var(--red-dim) !important;
+  box-shadow: 0 0 20px rgba(92,15,15,0.4),
+              inset 0 0 15px rgba(204,34,34,0.05);
+}
+
+.enq-submit .btn-bg {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, var(--maroon), var(--red-dim));
+  opacity: 0;
+  transition: opacity var(--dur) var(--ease);
+  z-index: 1;
+}
+
+.enq-submit:hover .btn-bg { opacity: 1; }
+
+.enq-submit:hover {
+  box-shadow: 0 0 30px var(--glow-sm), 0 0 60px rgba(204,34,34,0.1);
+  transform: translateY(-2px);
+}
+
+.enq-submit .btn-arrow {
+  font-size: 1rem;
+  transition: transform var(--dur) var(--ease);
+}
+
+.enq-submit:hover .btn-arrow { transform: translateX(4px); }
+
+/* =====================================================
+   CONTACT LIST
+===================================================== */
+
+.contact-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+}
+
+.contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 0.9rem 1.1rem;
+  border-bottom: 1px solid var(--border);
+  transition: background var(--dur) var(--ease);
+}
+
+.contact-item:last-child { border-bottom: none; }
+.contact-item:hover { background: var(--bg-3); }
+
+.ci-label {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 2px;
+  color: var(--grey-3);
+  white-space: nowrap;
+  padding-top: 2px;
+  min-width: 90px;
+}
+
+.ci-vals {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.ci-vals a {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--grey-5);
+  transition: color var(--dur) var(--ease);
+  word-break: break-all;
+}
+
+.ci-vals a:hover { color: var(--red-bright); }
+
+.contact-note {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--grey-3);
+  line-height: 1.6;
+  padding-left: 0.85rem;
+  border-left: 2px solid var(--border-mid);
+}
+
+/* =====================================================
+   FAQ ACCORDION
+===================================================== */
+
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  overflow: hidden;
+  margin-top: 1.5rem;
+}
+
+.faq-item {
+  border-bottom: 1px solid var(--border);
+}
+
+.faq-item:last-child { border-bottom: none; }
+
+.faq-q {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.1rem 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  transition: background var(--dur) var(--ease);
+  position: relative;
+}
+
+.faq-q::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 2px;
+  background: var(--red);
+  transform: scaleY(0);
+  transform-origin: bottom;
+  transition: transform 0.35s var(--ease);
+}
+
+.faq-q[aria-expanded="true"]::before,
+.faq-q:hover::before {
+  transform: scaleY(1);
+}
+
+.faq-q:hover { background: rgba(204,34,34,0.04); }
+
+.faq-q[aria-expanded="true"] {
+  background: rgba(204,34,34,0.06);
+}
+
+.faq-q span:first-child {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: 0.3px;
+  line-height: 1.4;
+}
+
+.faq-icon {
+  font-family: var(--font-mono);
+  font-size: 1.1rem;
+  color: var(--red-dim);
+  flex-shrink: 0;
+  transition: transform 0.3s var(--ease), color 0.3s var(--ease);
+  line-height: 1;
+}
+
+.faq-q[aria-expanded="true"] .faq-icon {
+  transform: rotate(45deg);
+  color: var(--red);
+}
+
+.faq-a {
+  display: none;
+  padding: 0 1.5rem 1.25rem 1.5rem;
+  font-size: 0.92rem;
+  color: var(--grey-4);
+  line-height: 1.8;
+  border-top: 1px solid var(--border);
+  background: var(--bg-2);
+}
+
+.faq-a.open {
+  display: block;
+}
+
+/* =====================================================
+   SUCCESS POPUP
+===================================================== */
+
+.success-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.88);
+  backdrop-filter: blur(10px);
+  z-index: 500;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.success-overlay.active {
+  display: flex;
+}
+
+.success-box {
+  background: var(--bg-1);
+  border: 1px solid var(--border-mid);
+  border-radius: 6px;
+  padding: 3rem 2.5rem;
+  text-align: center;
+  max-width: 440px;
+  width: 100%;
+  box-shadow: 0 0 60px rgba(204,34,34,0.2), 0 40px 80px rgba(0,0,0,0.5);
+}
+
+.success-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: 2px solid var(--red-dim);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  color: var(--red);
+  margin: 0 auto 1.5rem;
+  box-shadow: 0 0 20px var(--glow-sm);
+}
+
+.success-box h3 {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: var(--text);
+  margin-bottom: 0.75rem;
+}
+
+.success-box p {
+  font-size: 0.9rem;
+  color: var(--grey-4);
+  line-height: 1.7;
+  margin-bottom: 2rem;
+}
+
+/* btn-primary reuse */
+.success-box .btn-primary {
+  display: inline-flex;
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  padding: 0;
+  border-radius: 3px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all var(--dur) var(--ease);
+  border: none;
+}
+
+.success-box .btn-primary .btn-inner {
+  padding: 0.8rem 2rem;
+  position: relative;
+  z-index: 2;
+  background: var(--maroon);
+  color: var(--text);
+  border: 1px solid var(--red-dim);
+  border-radius: 3px;
+  transition: all var(--dur) var(--ease);
+}
+
+.success-box .btn-primary .btn-bg {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, var(--maroon), var(--red-dim));
+  opacity: 0;
+  transition: opacity var(--dur) var(--ease);
+  z-index: 1;
+}
+
+.success-box .btn-primary:hover .btn-bg { opacity: 1; }
+.success-box .btn-primary:hover { transform: translateY(-2px); }
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 960px) {
+  .enq-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .enq-card-side {
+    border-top: 1px solid var(--border);
+    border-left: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .page-inner { padding: 3rem 1.5rem; }
+
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .enq-submit { align-self: stretch; width: 100%; }
+  .enq-submit .btn-inner { justify-content: center; }
+
+  .enq-card { padding: 1.75rem 1.5rem; }
+
+  .success-box { padding: 2rem 1.5rem; }
+}

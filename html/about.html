@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About — OffSecDiary</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Rajdhani:wght@300;400;500;600&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/home.css">
+  <link rel="stylesheet" href="../css/about.css">
+</head>
+<body>
+
+  <canvas id="bg-canvas"></canvas>
+  <div class="grain"></div>
+  <div class="vignette"></div>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="home.html" class="nav-logo">
+        <span class="nl-b">[</span>OffSecDiary<span class="nl-b">]</span>
+      </a>
+      <button class="nav-burger" id="burger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="home.html">Home</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="enquiry.html">Enquiry</a></li>
+        <li><a href="about.html" class="active">About</a></li>
+        <!--<li><a href="achievements.html">Achievements</a></li>-->
+      </ul>
+    </div>
+  </nav>
+
+  <!-- PAGE -->
+  <main class="page-main">
+    <div class="page-inner">
+
+      <!-- Page header -->
+      <div class="page-header" data-reveal>
+        <div class="sec-label">
+          <span class="slab-n">OSD</span>
+          <span class="slab-slash">//</span>
+          <span class="slab-t">ABOUT</span>
+        </div>
+        <h1 class="page-title">About <span class="t-red">OffSecDiary</span></h1>
+        <p class="page-sub">A community-driven offensive security research platform focused on real-world cybersecurity, hands-on research, and practical attack methodologies.</p>
+      </div>
+
+      <!-- ===== 01 WHO WE ARE ===== -->
+      <div class="about-block" data-reveal>
+        <div class="sec-label">
+          <span class="slab-n">01</span>
+          <span class="slab-slash">//</span>
+          <span class="slab-t">WHO WE ARE</span>
+        </div>
+        <div class="about-block-body">
+          <p>OffSecDiary is built by security practitioners for learners who want to understand how attacks work before learning how to defend against them.</p>
+          <p>We do not train tool users — we develop skilled security operators through ethical, research-driven, and experience-based learning.</p>
+          <blockquote class="about-quote">"You cannot defend what you do not understand."</blockquote>
+        </div>
+      </div>
+
+      <!-- ===== 02 WHAT WE DO ===== -->
+      <div class="about-block" data-reveal>
+        <div class="sec-label">
+          <span class="slab-n">02</span>
+          <span class="slab-slash">//</span>
+          <span class="slab-t">WHAT WE DO</span>
+        </div>
+        <div class="about-block-body">
+          <div class="what-grid">
+
+            <div class="what-item">
+              <span class="what-num">01</span>
+              <div>
+                <h4>CTF Building &amp; Hosting</h4>
+                <p>Real-world Capture The Flag challenges based on offensive security techniques.</p>
+              </div>
+            </div>
+
+            <div class="what-item">
+              <span class="what-num">02</span>
+              <div>
+                <h4>Offensive Security Training</h4>
+                <p>1 month fundamentals, 3 month practical exploitation, 6 month advanced offensive security &amp; research.</p>
+              </div>
+            </div>
+
+            <div class="what-item">
+              <span class="what-num">03</span>
+              <div>
+                <h4>Research &amp; Development</h4>
+                <p>Vulnerability research, attack vectors, emerging threat techniques, and security product concepts.</p>
+              </div>
+            </div>
+
+            <div class="what-item">
+              <span class="what-num">04</span>
+              <div>
+                <h4>Free Workshops</h4>
+                <p>Community-driven sessions focused on practical cybersecurity awareness and skill building.</p>
+              </div>
+            </div>
+
+            <div class="what-item">
+              <span class="what-num">05</span>
+              <div>
+                <h4>Penetration Testing &amp; VA</h4>
+                <p>Ethical testing based on realistic attacker behavior and real-world threat modeling.</p>
+              </div>
+            </div>
+
+            <div class="what-item">
+              <span class="what-num">06</span>
+              <div>
+                <h4>Security Tool Development</h4>
+                <p>Custom tools for automation, research, and offensive testing workflows.</p>
+              </div>
+            </div>
+
+            <div class="what-item">
+              <span class="what-num">07</span>
+              <div>
+                <h4>Expert Sessions</h4>
+                <p>Industry-led talks covering real attack case studies and advanced security concepts.</p>
+              </div>
+            </div>
+
+            <div class="what-item">
+              <span class="what-num">08</span>
+              <div>
+                <h4>Shadow Corps</h4>
+                <p>Campus Ambassador Program for leadership, awareness, and community building inside academic institutions.</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== 03 CERTIFICATIONS ===== -->
+      <div class="about-block" data-reveal>
+        <div class="sec-label">
+          <span class="slab-n">03</span>
+          <span class="slab-slash">//</span>
+          <span class="slab-t">CERTIFICATIONS</span>
+        </div>
+        <div class="about-block-body">
+          <p>Research-driven certification programs designed to build practical cybersecurity and offensive security capabilities aligned with real-world security challenges.</p>
+          <div class="cert-grid">
+
+            <div class="cert-item">
+              <span class="cert-code">OCMEF</span>
+              <span class="cert-name">OffSecDiary Certified Malware Exploit Fundamentals</span>
+            </div>
+
+            <div class="cert-item">
+              <span class="cert-code">RVM</span>
+              <span class="cert-name">RedVector MasterClass</span>
+            </div>
+
+            <div class="cert-item">
+              <span class="cert-code">OCQSF</span>
+              <span class="cert-name">OffSecDiary Certified Quantum Security Foundations</span>
+            </div>
+
+            <div class="cert-item">
+              <span class="cert-code">CARLA</span>
+              <span class="cert-name">Certified AI Red-Teaming &amp; LLM Security Analyst</span>
+            </div>
+
+            <div class="cert-item">
+              <span class="cert-code">OCWS</span>
+              <span class="cert-name">OffSecDiary Certified Web Security Specialist</span>
+            </div>
+
+            <div class="cert-item">
+              <span class="cert-code">OCDFS</span>
+              <span class="cert-name">OffSecDiary Certified Digital Forensics Specialist</span>
+            </div>
+
+            <div class="cert-item">
+              <span class="cert-code">OCDPA</span>
+              <span class="cert-name">OffSecDiary Certified Data Privacy Associate</span>
+            </div>
+
+            <div class="cert-item">
+              <span class="cert-code">COTMS</span>
+              <span class="cert-name">Certified OSINT &amp; Threat Monitoring Specialist</span>
+            </div>
+
+            <div class="cert-item">
+              <span class="cert-code">OCDS</span>
+              <span class="cert-name">OffSecDiary Certified DevSecOps Specialist</span>
+            </div>
+
+            <div class="cert-item">
+              <span class="cert-code">CISEH</span>
+              <span class="cert-name">Certified Information Security &amp; Ethical Hacker</span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== 04 TEAM ===== -->
+      <div class="about-block" data-reveal>
+        <div class="sec-label">
+          <span class="slab-n">04</span>
+          <span class="slab-slash">//</span>
+          <span class="slab-t">OUR TEAM</span>
+        </div>
+        <p class="about-block-desc">The people behind OffSecDiary — researchers, developers, designers, and mentors working together to build an ethical offensive security community.</p>
+
+        <div class="team-grid">
+
+          <div class="team-card" tabindex="0">
+            <div class="team-inner">
+              <div class="team-front">
+                <span class="team-avatar">M</span>
+                <h3>Mr_Spice</h3>
+                <span class="team-role">Software Development</span>
+                <span class="team-flip-hint">TAP TO VIEW</span>
+              </div>
+              <div class="team-back">
+                <h4>Mr_Spice</h4>
+                <ul>
+                  <li>Full-stack development</li>
+                  <li>Testing</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="team-card" tabindex="0">
+            <div class="team-inner">
+              <div class="team-front">
+                <span class="team-avatar">H</span>
+                <h3>Heartking</h3>
+                <span class="team-role">Operations</span>
+                <span class="team-flip-hint">TAP TO VIEW</span>
+              </div>
+              <div class="team-back">
+                <h4>Heartking</h4>
+                <ul>
+                  <li>Detection engineering</li>
+                  <li>Purple teaming</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="team-card" tabindex="0">
+            <div class="team-inner">
+              <div class="team-front">
+                <span class="team-avatar">F</span>
+                <h3>fallacy</h3>
+                <span class="team-role">Ghost Lab</span>
+                <span class="team-flip-hint">TAP TO VIEW</span>
+              </div>
+              <div class="team-back">
+                <h4>fallacy</h4>
+                <ul>
+                  <li>Java</li>
+                  <li>C</li>
+                  <li>Python</li>
+                  <li>SolidWorks</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="team-card" tabindex="0">
+            <div class="team-inner">
+              <div class="team-front">
+                <span class="team-avatar">0</span>
+                <h3>0byte</h3>
+                <span class="team-role">Research &amp; Development</span>
+                <span class="team-flip-hint">TAP TO VIEW</span>
+              </div>
+              <div class="team-back">
+                <h4>0byte</h4>
+                <ul>
+                  <li>Vulnerability assessment</li>
+                  <li>Penetration testing</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="team-card" tabindex="0">
+            <div class="team-inner">
+              <div class="team-front">
+                <span class="team-avatar">R</span>
+                <h3>RootX</h3>
+                <span class="team-role">UI / UX Design</span>
+                <span class="team-flip-hint">TAP TO VIEW</span>
+              </div>
+              <div class="team-back">
+                <h4>RootX</h4>
+                <ul>
+                  <li>Python</li>
+                  <li>UI design</li>
+                  <li>Cybersecurity</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="team-card" tabindex="0">
+            <div class="team-inner">
+              <div class="team-front">
+                <span class="team-avatar">S</span>
+                <h3>sudoX</h3>
+                <span class="team-role">UI / UX &amp; Design</span>
+                <span class="team-flip-hint">TAP TO VIEW</span>
+              </div>
+              <div class="team-back">
+                <h4>sudoX</h4>
+                <ul>
+                  <li>Python</li>
+                  <li>UI/UX design</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="team-card" tabindex="0">
+            <div class="team-inner">
+              <div class="team-front">
+                <span class="team-avatar">T</span>
+                <h3>Tanya</h3>
+                <span class="team-role">UI / UX &amp; Design</span>
+                <span class="team-flip-hint">TAP TO VIEW</span>
+              </div>
+              <div class="team-back">
+                <h4>Tanya</h4>
+                <ul>
+                  <li>Python</li>
+                  <li>UI/UX</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="team-card" tabindex="0">
+            <div class="team-inner">
+              <div class="team-front">
+                <span class="team-avatar">R</span>
+                <h3>rishi.tech</h3>
+                <span class="team-role">R &amp; D</span>
+                <span class="team-flip-hint">TAP TO VIEW</span>
+              </div>
+              <div class="team-back">
+                <h4>rishi.tech</h4>
+                <ul>
+                  <li>Research</li>
+                  <li>Technical analysis</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="team-card" tabindex="0">
+            <div class="team-inner">
+              <div class="team-front">
+                <span class="team-avatar">S</span>
+                <h3>SystemsQueen</h3>
+                <span class="team-role">Software Developer</span>
+                <span class="team-flip-hint">TAP TO VIEW</span>
+              </div>
+              <div class="team-back">
+                <h4>SystemsQueen</h4>
+                <ul>
+                  <li>Backend development</li>
+                  <li>API design</li>
+                  <li>System architecture</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="team-card" tabindex="0">
+            <div class="team-inner">
+              <div class="team-front">
+                <span class="team-avatar">R</span>
+                <h3>Research Army</h3>
+                <span class="team-role">R &amp; D</span>
+                <span class="team-flip-hint">TAP TO VIEW</span>
+              </div>
+              <div class="team-back">
+                <h4>Research Army</h4>
+                <ul>
+                  <li>NLP (learning)</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="team-card" tabindex="0">
+            <div class="team-inner">
+              <div class="team-front">
+                <span class="team-avatar">C</span>
+                <h3>Ciphera</h3>
+                <span class="team-role">Software Development</span>
+                <span class="team-flip-hint">TAP TO VIEW</span>
+              </div>
+              <div class="team-back">
+                <h4>Ciphera</h4>
+                <ul>
+                  <li>Frontend development</li>
+                  <li>UI structuring</li>
+                  <li>Secure design</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="team-card" tabindex="0">
+            <div class="team-inner">
+              <div class="team-front">
+                <span class="team-avatar">S</span>
+                <h3>Sushil Sharma</h3>
+                <span class="team-role">R &amp; D</span>
+                <span class="team-flip-hint">TAP TO VIEW</span>
+              </div>
+              <div class="team-back">
+                <h4>Sushil Sharma</h4>
+                <ul>
+                  <li>Research</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="ft-brand">
+          <span class="ft-logo"><span class="nl-b">[</span>OFFSEC<span class="t-red">DIARY</span><span class="nl-b">]</span></span>
+          <span class="ft-tagline">Offensive Security Research &amp; Development</span>
+        </div>
+        <nav class="ft-nav">
+          <a href="home.html">Home</a>
+          <a href="events.html">Events</a>
+          <a href="about.html">About</a>
+          <a href="enquiry.html">Enquiry</a>
+          <a href="achievements.html">Achievements</a>
+        </nav>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2025 OffSecDiary. All rights reserved.</span>
+        <span class="ft-warn">[ Unauthorized access is prohibited ]</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/home.js"></script>
+  <script src="../js/about.js"></script>
+</body>
+</html>

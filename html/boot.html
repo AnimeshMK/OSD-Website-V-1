@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OffSecDiary — Secure Boot</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/boot.css">
+</head>
+<body>
+
+  <canvas id="boot-matrix"></canvas>
+  <div class="boot-grain"></div>
+  <div class="boot-vignette"></div>
+
+  <!-- BOOT SCREEN -->
+  <div id="boot-screen">
+
+    <!-- Corner brackets -->
+    <div class="corner tl"></div>
+    <div class="corner tr"></div>
+    <div class="corner bl"></div>
+    <div class="corner br"></div>
+
+    <!-- Top bar -->
+    <div class="boot-topbar">
+      <span class="tb-logo"><span class="tb-b">[</span>OFFSEC<span class="tb-red">DIARY</span><span class="tb-b">]</span></span>
+      <span class="tb-status">SECURE BOOT SEQUENCE</span>
+      <div class="tb-telemetry">
+        <span>CPU <span id="cpu" class="tel-val">--</span>°C</span>
+        <span>MEM <span id="mem" class="tel-val">--</span>%</span>
+        <span>PING <span id="lat" class="tel-val">--</span>ms</span>
+      </div>
+    </div>
+
+    <!-- Core -->
+    <div class="boot-core">
+      <div class="core-rings">
+        <div class="ring ring-1"></div>
+        <div class="ring ring-2"></div>
+        <div class="ring ring-3"></div>
+      </div>
+
+      <div class="core-inner">
+        <div class="ci-logo">
+          <img src="../assets/bootlogo_noname.PNG" alt="OffSecDiary Logo" style="width: 52px; height: 52px; object-fit: contain;">
+        </div>
+        <div class="ci-percent" id="progressText">0%</div>
+        <div class="ci-phase" id="phaseText">INITIALIZING</div>
+      </div>
+
+      <svg class="progress-svg" viewBox="0 0 220 220">
+        <circle class="prog-track" cx="110" cy="110" r="100"/>
+        <circle class="prog-fill" id="progCircle" cx="110" cy="110" r="100"/>
+      </svg>
+    </div>
+
+    <!-- Diagnostics -->
+    <div class="boot-diag left">
+      <div class="diag-item">
+        <span class="di-label">SECURE BOOT</span>
+        <span class="di-val ok">[ OK ]</span>
+      </div>
+      <div class="diag-item">
+        <span class="di-label">CRYPTO ENGINE</span>
+        <span class="di-val ok">[ OK ]</span>
+      </div>
+      <div class="diag-item">
+        <span class="di-label">SANDBOX</span>
+        <span class="di-val ok">[ OK ]</span>
+      </div>
+    </div>
+
+    <div class="boot-diag right">
+      <div class="diag-item">
+        <span class="di-label">FIREWALL</span>
+        <span class="di-val ok">[ ACTIVE ]</span>
+      </div>
+      <div class="diag-item">
+        <span class="di-label">INTRUSION AI</span>
+        <span class="di-val ok">[ LIVE ]</span>
+      </div>
+      <div class="diag-item">
+        <span class="di-label">UPLINK</span>
+        <span class="di-val ok">[ SECURE ]</span>
+      </div>
+    </div>
+
+    <!-- Status / typewriter line -->
+    <div class="boot-bottom">
+      <div class="status-line" id="statusLine"></div>
+      <div class="status-bar">
+        <div class="status-bar-fill" id="statusBarFill"></div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- WELCOME SCREEN -->
+  <div id="welcome-screen">
+    <div class="welcome-inner">
+      <div class="welcome-logo-mark">
+        <img src="../assets/bootlogo_noname.PNG" alt="OffSecDiary Logo" style="width: 80px; height: 80px; object-fit: contain;">
+      </div>
+      <h1 class="welcome-title">WELCOME TO <span class="wt-red">OFFSECDIARY</span></h1>
+      <p class="welcome-sub">Hack | Defend | Innovate</p>
+    </div>
+  </div>
+
+  <script src="../js/boot.js"></script>
+</body>
+</html>

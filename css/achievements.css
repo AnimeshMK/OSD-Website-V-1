@@ -1,0 +1,153 @@
+/* =====================================================
+   OFFSECDIARY — achievements.css
+   Extends home.css — same variables, same theme
+===================================================== */
+
+/* ---- Page layout (shared across all pages) ---- */
+.page-main {
+  min-height: 100vh;
+  padding: 100px 0 6rem;
+  position: relative;
+  z-index: 10;
+}
+
+.page-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 4rem 2.5rem;
+}
+
+/* ---- Page header ---- */
+.page-header {
+  margin-bottom: 3.5rem;
+}
+
+.page-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-weight: 900;
+  letter-spacing: 2px;
+  color: var(--text);
+  margin: 1.25rem 0 0.75rem;
+  line-height: 1.05;
+}
+
+.page-sub {
+  font-size: 1rem;
+  color: var(--grey-4);
+  max-width: 580px;
+  line-height: 1.7;
+}
+
+/* =====================================================
+   ACHIEVEMENT GRID
+===================================================== */
+
+.ach-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+/* =====================================================
+   ACHIEVEMENT CARD
+===================================================== */
+
+.ach-card {
+  background: var(--bg-1);
+  padding: 2rem 1.75rem;
+  position: relative;
+  overflow: hidden;
+  transition: background var(--dur) var(--ease);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+/* Top accent line — scales in on hover */
+.ach-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--red-dim), var(--red), var(--maroon));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.45s var(--ease);
+}
+
+.ach-card:hover { background: var(--bg-2); }
+.ach-card:hover::before { transform: scaleX(1); }
+
+/* Card top row: icon + tag */
+.ach-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.25rem;
+}
+
+.ach-icon {
+  font-size: 1.6rem;
+  line-height: 1;
+  filter: drop-shadow(0 0 6px rgba(204,34,34,0.3));
+}
+
+.ach-tag {
+  font-family: var(--font-mono);
+  font-size: 0.58rem;
+  letter-spacing: 2px;
+  color: var(--red-dim);
+  border: 1px solid var(--border-mid);
+  padding: 0.2rem 0.55rem;
+  border-radius: 2px;
+  background: rgba(204,34,34,0.05);
+  transition: all var(--dur) var(--ease);
+}
+
+.ach-card:hover .ach-tag {
+  color: var(--red);
+  border-color: var(--border-hi);
+  background: rgba(204,34,34,0.1);
+}
+
+/* Title */
+.ach-title {
+  font-family: var(--font-display);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: var(--text);
+  line-height: 1.4;
+  transition: color var(--dur) var(--ease);
+}
+
+.ach-card:hover .ach-title { color: var(--red-bright); }
+
+/* Description */
+.ach-desc {
+  font-size: 0.88rem;
+  color: var(--grey-4);
+  line-height: 1.7;
+  flex: 1;
+}
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 1100px) {
+  .ach-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .page-inner { padding: 3rem 1.5rem; }
+}
+
+@media (max-width: 520px) {
+  .ach-grid { grid-template-columns: 1fr; }
+}

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Events — OffSecDiary</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Rajdhani:wght@300;400;500;600&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/home.css">
+  <link rel="stylesheet" href="../css/events.css">
+</head>
+<body>
+
+  <canvas id="bg-canvas"></canvas>
+  <div class="grain"></div>
+  <div class="vignette"></div>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="home.html" class="nav-logo">
+        <span class="nl-b">[</span>OffSecDiary<span class="nl-b">]</span>
+      </a>
+      <button class="nav-burger" id="burger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="home.html">Home</a></li>
+        <li><a href="events.html" class="active">Events</a></li>
+        <li><a href="enquiry.html">Enquiry</a></li>
+        <li><a href="about.html">About</a></li>
+        <!--<li><a href="achievements.html">Achievements</a></li>-->
+      </ul>
+    </div>
+  </nav>
+
+  <!-- PAGE -->
+  <main class="page-main">
+    <div class="page-inner">
+
+      <!-- Page header -->
+      <div class="page-header" data-reveal>
+        <div class="sec-label">
+          <span class="slab-n">OSD</span>
+          <span class="slab-slash">//</span>
+          <span class="slab-t">EVENTS</span>
+        </div>
+        <h1 class="page-title">Events &amp; <span class="t-red">Programs</span></h1>
+        <p class="page-sub">Competitions, training programs, and research-driven security initiatives.</p>
+      </div>
+
+      <!-- Filters -->
+      <div class="events-filters" data-reveal data-delay="1">
+        <button class="filter-btn active" data-filter="all">ALL</button>
+        <button class="filter-btn" data-filter="upcoming">UPCOMING</button>
+        <button class="filter-btn" data-filter="past">PAST</button>
+      </div>
+
+      <!-- Events list -->
+      <div class="events-list" id="eventsList">
+
+        <div class="event-card" data-reveal
+             data-status="past"
+             data-title="Open Offensive CTF 2025"
+             data-date="29 Nov 2025 – 30 Nov 2025"
+             data-deadline="Registration Closed"
+             data-register="https://luma.com/e8cqtqsj"
+             data-image="../assets/events/openoffensivectf.jpeg"
+             data-description="OffSecDiary presents Open Offensive CTF 2025.
+
+Hands-on challenges covering:
+• Web exploitation
+• File upload bypass
+• Remote code execution
+• Forensics &amp; reversing
+
+Certificates for all participants.
+Top performers receive prizes.">
+
+          <div class="event-thumb">
+            <img src="../assets/events/openoffensivectf.jpeg" alt="Open Offensive CTF 2025">
+          </div>
+          <div class="event-info">
+            <div class="event-status-tag past">PAST</div>
+            <h3 class="event-title">Open Offensive CTF 2025</h3>
+            <div class="event-meta">
+              <span>29 NOV – 30 NOV 2025</span>
+              <span class="em-sep">·</span>
+              <span>Registration Closed</span>
+            </div>
+            <p class="event-excerpt">Hands-on CTF covering web exploitation, file upload bypass, remote code execution, forensics and reversing.</p>
+          </div>
+          <div class="event-arrow">→</div>
+        </div>
+
+        <!-- Empty state (hidden when cards exist) -->
+        <div class="events-empty" id="eventsEmpty" style="display:none;">
+          <span class="ee-icon">[ ]</span>
+          <p>No events match this filter.</p>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- MODAL -->
+  <div class="event-overlay" id="eventOverlay">
+    <div class="event-modal">
+      <button class="event-close" id="eventClose" aria-label="Close">×</button>
+      <div class="event-modal-layout">
+        <div class="event-modal-image">
+          <img id="modalImage" src="" alt="" />
+        </div>
+        <div class="event-modal-content">
+          <div class="modal-status-tag" id="modalStatus"></div>
+          <h2 id="modalTitle"></h2>
+          <div class="event-modal-meta">
+            <span id="modalDate"></span>
+            <span id="modalDeadline"></span>
+          </div>
+          <p id="modalDescription"></p>
+          <a id="modalRegister" class="event-register-btn" target="_blank" rel="noopener">
+            REGISTER / VIEW DETAILS →
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="ft-brand">
+          <span class="ft-logo"><span class="nl-b">[</span>OFFSEC<span class="t-red">DIARY</span><span class="nl-b">]</span></span>
+          <span class="ft-tagline">Offensive Security Research &amp; Development</span>
+        </div>
+        <nav class="ft-nav">
+          <a href="home.html">Home</a>
+          <a href="events.html">Events</a>
+          <a href="about.html">About</a>
+          <a href="enquiry.html">Enquiry</a>
+          <a href="achievements.html">Achievements</a>
+        </nav>
+      </div>
+      <div class="footer-bottom">
+        <span> 2025 OffSecDiary. All rights reserved.</span>
+        <span class="ft-warn">[ Unauthorized access is prohibited ]</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/home.js"></script>
+  <script src="../js/events.js"></script>
+</body>
+</html>

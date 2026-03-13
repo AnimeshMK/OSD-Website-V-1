@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Enquiry — OffSecDiary</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Rajdhani:wght@300;400;500;600&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/home.css">
+  <link rel="stylesheet" href="../css/enquiry.css">
+</head>
+<body>
+
+  <canvas id="bg-canvas"></canvas>
+  <div class="grain"></div>
+  <div class="vignette"></div>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="home.html" class="nav-logo">
+        <span class="nl-b">[</span>OffSecDiary<span class="nl-b">]</span>
+      </a>
+      <button class="nav-burger" id="burger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="home.html">Home</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="enquiry.html" class="active">Enquiry</a></li>
+        <li><a href="about.html">About</a></li>
+        <!--<li><a href="achievements.html">Achievements</a></li>-->
+      </ul>
+    </div>
+  </nav>
+
+  <!-- PAGE -->
+  <main class="page-main">
+    <div class="page-inner enq-inner">
+
+      <!-- Page header -->
+      <div class="page-header" data-reveal>
+        <div class="sec-label">
+          <span class="slab-n">OSD</span>
+          <span class="slab-slash">//</span>
+          <span class="slab-t">ENQUIRY</span>
+        </div>
+        <h1 class="page-title">Get in <span class="t-red">Touch</span></h1>
+        <p class="page-sub">Reach out for collaborations, research discussions, training inquiries, or security-related engagements.</p>
+      </div>
+
+      <!-- Grid: form + contact -->
+      <div class="enq-grid">
+
+        <!-- ===== FORM CARD ===== -->
+        <div class="enq-card" data-reveal>
+          <div class="enq-card-label">
+            <span class="slab-n">01</span>
+            <span class="slab-slash">//</span>
+            <span class="slab-t">SUBMIT AN ENQUIRY</span>
+          </div>
+          <p class="enq-card-desc">Fill in your details below. We'll respond through the appropriate channel.</p>
+
+          <form class="enq-form" id="enquiryForm">
+            <!-- Honeypot -->
+            <input type="text" name="website" tabindex="-1" autocomplete="off" style="display:none">
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="enq-name">FULL NAME</label>
+                <input type="text" id="enq-name" name="name" placeholder="Your full name" required />
+              </div>
+              <div class="form-group">
+                <label for="enq-email">EMAIL ADDRESS</label>
+                <input type="email" id="enq-email" name="email" placeholder="Your email address" required />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="enq-subject">SUBJECT</label>
+              <input type="text" id="enq-subject" name="subject" placeholder="Purpose of your enquiry" required />
+            </div>
+
+            <div class="form-group">
+              <label for="enq-message">MESSAGE</label>
+              <textarea id="enq-message" name="message" rows="5" placeholder="Describe your query in detail" required></textarea>
+            </div>
+
+            <!-- Hidden metadata -->
+            <input type="hidden" name="timestamp"   id="timestamp" />
+            <input type="hidden" name="timezone"    id="timezone" />
+            <input type="hidden" name="page_url"    id="page_url" />
+            <input type="hidden" name="user_agent"  id="user_agent" />
+            <input type="hidden" name="referrer"    id="referrer" />
+            <input type="hidden" name="ip_address"  value="AUTO_FROM_APPS_SCRIPT" />
+            <input type="hidden" name="source"      value="enquiry_page" />
+
+            <button type="submit" class="enq-submit">
+              <span class="btn-inner">
+                <span class="btn-icon-left">⬡</span>
+                INITIATE TRANSMISSION
+                <span class="btn-arrow">→</span>
+              </span>
+              <span class="btn-bg"></span>
+            </button>
+          </form>
+        </div>
+
+        <!-- ===== CONTACT CHANNELS CARD ===== -->
+        <div class="enq-card enq-card-side" data-reveal data-delay="1">
+          <div class="enq-card-label">
+            <span class="slab-n">02</span>
+            <span class="slab-slash">//</span>
+            <span class="slab-t">CONTACT CHANNELS</span>
+          </div>
+          <p class="enq-card-desc">Official communication points. Use the appropriate channel for your requirement.</p>
+
+          <div class="contact-list">
+            <div class="contact-item">
+              <span class="ci-label">WHATSAPP</span>
+              <div class="ci-vals">
+                <a href="https://wa.me/918871440062" target="_blank" rel="noopener">+91 88714 40062</a>
+                <a href="https://wa.me/919667493039" target="_blank" rel="noopener">+91 96674 93039</a>
+              </div>
+            </div>
+            <div class="contact-item">
+              <span class="ci-label">EMAIL</span>
+              <div class="ci-vals">
+                <a href="mailto:offsecdiary@gmail.com">offsecdiary@gmail.com</a>
+              </div>
+            </div>
+            <div class="contact-item">
+              <span class="ci-label">SUPPORT</span>
+              <div class="ci-vals">
+                <a href="mailto:support@offsecdiary.com">support@offsecdiary.com</a>
+              </div>
+            </div>
+            <div class="contact-item">
+              <span class="ci-label">INSTAGRAM</span>
+              <div class="ci-vals">
+                <a href="https://www.instagram.com/offsecdiary" target="_blank" rel="noopener">@offsecdiary</a>
+              </div>
+            </div>
+            <div class="contact-item">
+              <span class="ci-label">LINKEDIN</span>
+              <div class="ci-vals">
+                <a href="https://www.linkedin.com/company/offsecdiary/" target="_blank" rel="noopener">OffSecDiary</a>
+              </div>
+            </div>
+            <div class="contact-item">
+              <span class="ci-label">X (TWITTER)</span>
+              <div class="ci-vals">
+                <a href="https://x.com/OffSecDiary" target="_blank" rel="noopener">@OffSecDiary</a>
+              </div>
+            </div>
+            <div class="contact-item">
+              <span class="ci-label">FACEBOOK</span>
+              <div class="ci-vals">
+                <a href="https://www.facebook.com/share/1BFWxgT9fg/" target="_blank" rel="noopener">OffSecDiary</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-note">
+            For official or sensitive matters, prefer email or the enquiry form.
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ===== FAQs CARD ===== -->
+      <div class="enq-card enq-card-full" data-reveal>
+        <div class="enq-card-label">
+          <span class="slab-n">03</span>
+          <span class="slab-slash">//</span>
+          <span class="slab-t">FREQUENTLY ASKED QUESTIONS</span>
+        </div>
+
+        <div class="faq-list">
+
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">
+              <span>How can I join the OffSecDiary community?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-a">
+              Follow OffSecDiary on LinkedIn, Instagram, and X (Twitter). An official WhatsApp Channel will be shared soon.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">
+              <span>Are OffSecDiary workshops paid?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-a">
+              No. All OffSecDiary workshops are completely free and conducted monthly or bi-monthly.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">
+              <span>Can I join OffSecDiary as an intern?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-a">
+              Yes. We regularly onboard interns across multiple domains. Visit the Join Us section for current openings.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">
+              <span>What is the duration of OffSecDiary training programs?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-a">
+              Training programs are available for 1 month, 3 months, and 6 months. Details are listed in the Join Us section.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">
+              <span>Who can join OffSecDiary programs?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-a">
+              Students, beginners, professionals, and security enthusiasts interested in hands-on cybersecurity learning.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">
+              <span>Is prior cybersecurity knowledge required?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-a">
+              No. Some programs are beginner-friendly, while others are advanced. Prerequisites are clearly mentioned for each program.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">
+              <span>Are certificates provided?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-a">
+              Yes. Certificates are issued for all programs that we conduct.
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- SUCCESS POPUP -->
+  <div class="success-overlay" id="successPopup">
+    <div class="success-box">
+      <div class="success-icon">✓</div>
+      <h3>TRANSMISSION SUCCESSFUL</h3>
+      <p>Your enquiry has been securely transmitted.<br>Our team will review and respond shortly.</p>
+      <button id="closeSuccess" class="btn-primary">
+        <span class="btn-inner">ACKNOWLEDGE</span>
+        <span class="btn-bg"></span>
+      </button>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="ft-brand">
+          <span class="ft-logo"><span class="nl-b">[</span>OFFSEC<span class="t-red">DIARY</span><span class="nl-b">]</span></span>
+          <span class="ft-tagline">Offensive Security Research &amp; Development</span>
+        </div>
+        <nav class="ft-nav">
+          <a href="home.html">Home</a>
+          <a href="events.html">Events</a>
+          <a href="about.html">About</a>
+          <a href="enquiry.html">Enquiry</a>
+          <a href="achievements.html">Achievements</a>
+        </nav>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2025 OffSecDiary. All rights reserved.</span>
+        <span class="ft-warn">[ Unauthorized access is prohibited ]</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/home.js"></script>
+  <script src="../js/enquiry.js"></script>
+</body>
+</html>
